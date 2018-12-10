@@ -1,0 +1,83 @@
+#mysliderX{left: 0px; @include animation-timing(1s);}
+.slider-close{left: 50% !important;}
+#showcase-area{height: 100vh; position: relative; padding: 0px; width: 100%;}
+#showcase-writings-area{width: 100%; position: absolute;}
+.showcase-writings-item{position: absolute; width: 100%; @include animation-timing(1.2s);}
+.showcase-writings-item-left{z-index: -1 !important;
+    -webkit-transform: translate(-100% , 0%);
+     -moz-transform: translate(-100% , 0%);
+      -ms-transform: translate(-100% , 0%);
+       -o-transform: translate(-100% , 0%);
+          transform: translate(-100% , 0%);
+}
+.showcase-writings-item-right{z-index: -1 !important;
+    -webkit-transform: translate(100% , 0%);
+     -moz-transform: translate(100% , 0%);
+      -ms-transform: translate(100% , 0%);
+       -o-transform: translate(100% , 0%);
+          transform: translate(100% , 0%);
+}
+.showcase-writings-item-current{z-index: 5 !important;}
+.showcase-writing-upper{ text-align: center; color: white; font-family: $font-2; font-weight: 400;letter-spacing: 4px;}
+.showcase-writing-mid{ text-align: center;  color: white;margin-bottom: 10px; font-weight: 200;letter-spacing: 4px;}
+.showcase-writing-lower{width: 80%; margin-left: 10%; height: 41px;
+    a{display: inline-block; width: 100%;font-size: 14px;  text-align: center; line-height: 38px; height: 41px; color: white; background-color: $mainsitecolor; text-decoration: none !important; border: 1px solid $mainsitecolor; @include animation-timing(0.3s); font-weight: 300;letter-spacing: 4px;}
+}
+#showcase-scroll-area{width: 100%; position: absolute; bottom: 50px; z-index: 4;}
+.showcase-scroll-inner{width: 100px;position: relative; left: 50%; margin-left: -50px;
+    a{display: inline-block; width: 100%; height: 100%; position: absolute; z-index: 5;}
+}
+.showcase-scroll-mouse{width: 100%; text-align: center;}
+.showcase-scroll-arrow{width: 100%; text-align: center; color: white;font-size: 20px;@include animation-timing(0.3s); top: 0px; position: relative;}
+@media only screen and (min-width: 992px) {
+    #showcase-writings-area{top: 50vh; margin-top: -92px;}
+    .showcase-left-arrow{margin-top: 37px;width: 100%;height: 100px;
+        a{display: inline-block; width: 100%; height: 100%;opacity: 0.5;@include animation-timing(0.3s);
+            img{float: left;margin-top: 50px;@include animation-timing(0.3s);margin-left: 0px;}
+        }
+        a:hover{opacity: 1;
+            img{margin-left: -10px;}
+        }
+    }
+    .showcase-right-arrow{margin-top: 37px;width: 100%;height: 100px;
+        a{display: inline-block; width: 100%; height: 100%; opacity: 0.5;@include animation-timing(0.3s);
+            img{float: right;margin-top: 50px;@include animation-timing(0.3s);margin-right: 0px;}
+        }
+        a:hover{opacity: 1;
+            img{margin-right: -10px;}
+        }
+    }
+    .showcase-writing-upper{font-size: 52px; width: 80%; margin-left: 10%;line-height: 54px; height: 56px; }
+    .showcase-writing-mid{font-size: 24px; width: 80%; margin-left: 10%;line-height: 26px; height: 26px;}
+    .showcase-writing-lower{width: 80%; margin-left: 10%;
+        a:hover{background-color: white; color: $mainsitecolor; border: 1px solid white;}
+    }
+    .showcase-scroll-mouse{padding-bottom: 35px;}
+    .showcase-scroll-inner:hover{
+        .showcase-scroll-arrow{top: 10px;}
+    }
+}
+@media only screen and (max-width: 992px) {
+    #showcase-writings-area{top: 50vh; margin-top: -66px;}
+    .showcase-left-arrow{margin-top: 13px;width: 100%;height: 100px;
+        a{display: inline-block; width: 100%; height: 100%; 
+            img{max-width: 100%;float: left;margin-top: 50px;}
+        }
+    }
+    .showcase-right-arrow{margin-top: 13px;width: 100%;height: 100px;
+        a{display: inline-block; width: 100%; height: 100%; 
+            img{max-width: 100%;float: right;margin-top: 50px;}
+        }
+    }
+    .showcase-writing-upper{font-size: 32px; width: 100%; margin-left: 0%;line-height: 34px; height: 34px; }
+    .showcase-writing-mid{font-size: 20px; width: 100%; margin-left: 0%;line-height: 22px; height: 22px;}
+    .showcase-writing-lower{width: 80%; margin-left: 10%;height: 35px;
+        a{display: inline-block; width: 100%;font-size: 13px;  text-align: center; line-height: 33px; height: 35px; color: white; background-color: $mainsitecolor; text-decoration: none !important; border: 1px solid $mainsitecolor; @include animation-timing(0.3s); font-weight: 300;letter-spacing: 4px;}
+    }
+    .showcase-scroll-mouse{padding-bottom: 25px;
+        img{width: 15px;}
+    }
+    .showcase-scroll-arrow{
+        img{width: 10px;}
+    }
+}

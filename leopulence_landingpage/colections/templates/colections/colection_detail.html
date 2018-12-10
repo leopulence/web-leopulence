@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}{{colection.title}}{% endblock %}
+
+{% block content %}
+{% include 'colections/includes/colections_bar.html' %}
+
+
+
+
+
+
+       <div class="container-fluid" id="content-collectiondetails-area">
+        <div class="content-collectiondetails-backwriting-topleft">FOR</div>
+        <div class="content-collectiondetails-backwriting-topright">WOMEN</div>
+        <div class="container">
+        {% for foto in colection.get_all_images %}
+            {% load colections_extras %}
+            {% is_pair foto.id as foto_pair %}
+            {% if foto_pair == False %}
+                <div class="row">
+                    <div class="column col-md-6 col-sm-6 col-xs-12" style="padding:0px;">
+                        
+                        <div class="content-collectiondetails-animation-area" id="ccaa-{{forloop.counter}}">
+                            <div class="content-collectiondetails-animation-item" id="ccai-{{forloop.counter}}" style="background-image: url('{{foto.image.url}}')">
+                            </div>
+                            <div class="content-collectiondetails-animation-filter"></div>
+                            <div class="content-collectiondetails-hover-area">
+                                <a href="{{foto.image.url}}" class="fancybox" data-fancybox-group="group" title="Gallery"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if foto_pair == True %}  
+                <div class="row">
+                    <div class="column col-md-6 col-sm-6 hidden-xs" style="padding:0px;"></div>
+                    <div class="column col-md-6 col-sm-6 col-xs-12" style="padding:0px;">
+                        <div class="content-collectiondetails-animation-area" id="ccaa-{{forloop.counter}}">
+                            <div class="content-collectiondetails-animation-item" id="ccai-{{forloop.counter}}" style="background-image: url('{{foto.image.url}}')">
+                            </div>
+                            <div class="content-collectiondetails-animation-filter"></div>
+                            <div class="content-collectiondetails-hover-area">
+                                <a href="{{foto.image.url}}" class="fancybox" data-fancybox-group="group" title="Gallery"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+
+  
+            <div class="row">
+                <div class="column col-md-12 col-sm-12 col-xs-12">
+                    <div class="content-go-top">
+                        <a href="#content-bg-area"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'core/js/collections.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/jquery.fancybox.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/jquery.fancybox-buttons.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/jquery.fancybox-media.js' %}"></script>
+<script src="https://use.typekit.net/vqp8msz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+{% endblock %}

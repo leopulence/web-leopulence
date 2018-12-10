@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}COLECCIONES{% endblock %}
+
+{% block content %}
+{% include 'colections/includes/colections_bar.html' %}
+<div class="container-fluid" id="content-corporate-area">
+    <div class="container">
+        <div class="row">
+        {% for colection in object_list %}
+        <div class="column col-md-3 col-sm-6 col-xs-12">
+            <div class="collections-choose-area" style="background-image: url('{{colection.image.url}}');">
+                <a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="{{colection.title}}">{{colection.title}}</a>
+            </div>
+            <!--{% if request.user.is_staff %}
+                <a href="{% url 'colections:update' colection.id %}">Editar</a>
+                <a href="{% url 'colections:delete' colection.id %}">Borrar</a>
+            {% endif %}-->
+        </div>
+        {% endfor %}   
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'core/js/collections.js' %}"></script>
+<script   src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://use.typekit.net/vqp8msz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+{% endblock %}

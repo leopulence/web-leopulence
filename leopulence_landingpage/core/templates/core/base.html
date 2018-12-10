@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+  <!--inicio carga inicial -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | LEOPULENCE</title>
+    <meta name="Author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="WOMEN, FASHION">
+    {% load static %}
+    <link href="{% static 'core/css/googlefont-roboto.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap-3.3.6-min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/jquery.fancybox.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/jquery.fancybox-buttons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/jquery.fancybox-thumbs.css' %}">
+    
+</head>
+  <!--fin de la carga inicial -->
+
+<body>
+    {% if request.path == '/' %}
+    <div id="showcase-area">
+        <div id="mysliderX"></div>
+    {% endif %}
+    {% if request.path != '/' %}
+    <div id="content-bg-area" style="background-image: url('http://placehold.it/1920x353');">
+    {% endif %}
+        <!--tuve que dejarlo o no anda -->
+        <div id="menu-area" class="hidden-sm hidden-xs menu-area-closed">
+            <div class="menu">
+                <div class="menu-item no-sub menu-item-open" id="menu-item-1">
+                    <ul>
+                        <li><a href="{% url 'home' %}" title="HOME">HOME</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item has-sub menu-item-open" id="menu-item-2">
+                    <ul>
+                        <li><a href="{% url 'pages:about' %}" title="CORPORATE">NOSOTROS</a></li>
+                        {% for pages in pages_list %}
+                        <li><a href="{% url 'pages:page' pages.id pages.title|slugify %}" title="{{pages.title}}">{{pages.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="menu-item has-sub menu-item-open" id="menu-item-3">
+                    <ul>
+                        <li><a href="{% url 'colections:colections' %}" title="COLLECTIONS">COLECCIONES</a></li>
+                        {% for colection in colections %}
+                        <li><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="{{colection}}">{{colection}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!--<div class="menu-item no-sub menu-item-open" id="menu-item-4">
+                    <ul>
+                        <li><a href="career.html" title="CAREER">CAREER</a></li>
+                    </ul>
+                </div>-->
+                <div class="menu-item no-sub menu-item-open" id="menu-item-4">
+                    <ul>
+                        <li><a href="{% url 'blog:blog' %}" title="NOVEDADES">NOVEDADES</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item no-sub menu-item-open" id="menu-item-5">
+                    <ul>
+                        <li><a href="{% url 'contact' %}" title="CONTACT">CONTACTO</a></li><!--
+                        <li><a href="customerrelations.html" title="CUSTOMER RELATIONS">Customer Relations</a></li>
+                        <li><a href="franchise.html" title="FRANCHISE">Franchise</a></li>
+                        <li><a href="saleslocations.html" title="SALES LOCATIONS">Sales Locations</a></li>
+                        <li><a href="shop.html" title="SHOPS">Shops</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="responsive-menu-area" class="hidden-md hidden-lg menu-area-closed">
+            <div class="responsive-menu">
+                <div class="responsive-menu-item no-sub" id="responsive-menu-item-1">
+                    <ul>
+                        <li><a href="{% url 'home' %}" title="HOME">HOME</a></li>
+                    </ul>
+                </div>
+                <div class="responsive-menu-item has-sub" id="responsive-menu-item-2">
+                    <ul>
+                        <li><a href="{% url 'pages:about' %}" title="CORPORATE">NOSOTROS</a></li>
+                    </ul>
+                </div>
+                <div class="responsive-menu-item has-sub" id="responsive-menu-item-3">
+                    <ul>
+                        <li><a href="{% url 'colections:colections' %}" title="COLECCIONES">COLECCIONES</a></li>
+                    </ul>
+                </div>
+               <!-- <div class="responsive-menu-item no-sub" id="responsive-menu-item-4">
+                    <ul>
+                        <li><a href="career.html" title="CAREER">ENVIAR CV</a></li>
+                    </ul>
+                </div>-->
+                <div class="responsive-menu-item no-sub" id="responsive-menu-item-4">
+                    <ul>
+                        <li><a href="{% url 'blog:blog' %}" title="NEWS">NOVEDADES</a></li>
+                    </ul>
+                </div>
+                <div class="responsive-menu-item no-sub" id="responsive-menu-item-5">
+                    <ul>
+                        <li><a href="{% url 'contact' %}" title="CONTACT">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="header-container">
+            <div class="row">
+                <div class="column col-md-4 col-sm-4 col-xs-6">
+                    <div class="header-logo"><a href="{% url 'home' %}" title="HOME"><img src="{% static 'core/images/OPULENCE.png' %}" alt="Logo"/></a></div>
+                </div>
+                <div class="column col-md-8 col-sm-8 col-xs-6">
+                    <div class="header-right-row">
+                        <div id="header-lang-area">
+                            <ul>
+                            <!--    <li><a href="javascript:void(0)" title="ES" id="headerlangtogglebutton">ES<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+                                <li><a href="javascript:void(0)" title="FR">FR</a></li>
+                                <li><a href="javascript:void(0)" title="IT">IT</a></li>-->
+                            </ul>
+                        </div>
+                        <div id="header-search-area">
+                           <!-- <div id="header-search-inner">
+                                <input type="text" name="headersearchinput" id="headersearchinput">
+                                <input type="submit" name="headersearchsubmit" id="headersearchsubmit" value="FIND">
+                                <div id="header-search-button"><a href="javascript:void(0)" title="Search Area" id="headersearchareabutton"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="header-right-row">
+                        <div id="header-menu-button">
+                            <a href="javascript:void(0)" title="MENU" id="headermenubutton"></a>
+                            <div class="header-menu-writing">MENU</div>
+                            <div class="header-menu-lines">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if request.path == '/' %}
+        <!--flechitas -->
+        <div id="showcase-writings-area">
+            <div class="showcase-writings-item showcase-writings-item-current">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="column col-md-1 col-sm-2 col-xs-3">
+                                <div class="showcase-left-arrow">
+                                    <a href="javascript:void(0)" title="Showcase Left" id="showcasearrowleft"><img src="{% static 'core/images/showcase-left.png' %}" alt="Left Arrow"/></a>
+                                </div>
+                            </div>
+                            <div class="column col-md-1 hidden-sm hidden-xs"></div>
+                            <div class="column col-md-3 col-sm-8 col-xs-6">
+                                <div class="showcase-writing-upper">WOMAN</div>
+                                <div class="showcase-writing-mid">{{last_colection.title}}</div>
+                                <div class="showcase-writing-lower"><a href="{% url 'colections:singlecolection' last_colection.id last_colection.title|slugify %}" title="DESCUBRIR">DESCUBRIR</a></div>
+                            </div>
+                            <div class="column col-md-6 hidden-sm hidden-xs"></div>
+                            <div class="column col-md-1 col-sm-2 col-xs-3">
+                                <div class="showcase-right-arrow">
+                                    <a href="javascript:void(0)" title="Showcase Right" id="showcasearrowright"><img src="{% static 'core/images/showcase-right.png' %}" alt="Right Arrow"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--mouse -->
+        <div id="showcase-scroll-area">
+            <div class="showcase-scroll-inner">
+                <a href="#home-content-area" title="GO DOWN"></a>
+                <div class="showcase-scroll-mouse"><img src="{% static 'core/images/showcase-mouse.png' %}" alt="Showcase Mouse Icon"/></div>
+                <div class="showcase-scroll-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+  {% block content %}{% endblock %}
+
+<!--inicio barra final-->
+  <div class="container-fluid" id="home-menu-area">
+      <div class="container">
+          <div class="row">
+              <div class="column col-md-1 hidden-sm hidden-sm"></div>
+              <div class="column col-md-2 col-sm-12 col-xs-12">
+                  <div class="home-menu hidden-sm hidden-xs">
+                      <ul>
+                          <li><a href="{% url 'home' %}" title="Home">Home</a></li>
+                          <li><a href="{% url 'pages:about' %}" title="Nosotros">Nosotros</a></li>
+                          <li><a href="{% url 'colections:colections' %}" title="Colecciones">Colecciones</a></li>
+                          <!--<li><a href="career.html" title="Career">Enviar CV</a></li>-->
+                          <li><a href="{% url 'blog:blog' %}" title="Novedades">Novedades</a></li>
+                          <li><a href="{% url 'contact' %}" title="Contacto">Contacto</a></li>
+                      </ul>
+                  </div>
+                  <div id="home-menu-small-area" class="hidden-md hidden-lg">
+                      <div id="home-menu-small">
+                          <ul>
+                              <li><a href="javascript:void(0)" id="homesmallmenubutton">MENU</a></li>
+                              <li><a href="{% url 'home' %}" title="Home">Home</a></li>
+                              <li><a href="{% url 'pages:about' %}" title="Nosotros">Nosotros</a></li>
+                              <li><a href="{% url 'colections:colections' %}" title="Colecciones">Colecciones</a></li>
+                              <!--<li><a href="career.html" title="Career">Enviar CV</a></li>-->
+                              <li><a href="{% url 'blog:blog' %}" title="Novedades">Novedades</a></li>
+                              <li><a href="{% url 'contact' %}" title="Contact">Contacto</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="column col-md-5 col-sm-12 col-xs-12">
+                  <div class="row">
+                      <div class="column col-md-12 col-sm-12 col-xs-12">
+                          <div class="home-menu-header">NOVEDADES</div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="column col-md-5 col-sm-5 col-xs-12">
+                          <div class="home-menu-news-pic"><img src="{{novedad.image.url}}" alt="News Picture"/></div>
+                      </div>
+                      <div class="column col-md-7 col-sm-7 col-xs-12">
+                          <div class="home-menu-news-writing">
+                              <p><b>por {{novedad.author}} {{novedad.published|date:"D d M, Y"}}</b></p>
+                              <p>{{novedad.title}}</p>
+                              <p>With our new website we are ready to offer our products to you whereever you are.</p>
+                              <div class="home-menu-allnews">
+                                  <a href="{% url 'blog:blog' %}" title="ALL NEWS">Todas las Novedades</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column col-md-3 col-sm-12 col-xs-12">
+                  <div class="row">
+                      <div class="column col-md-12 col-sm-12 col-xs-12">
+                          <div class="home-menu-header">BOLETIN ELECTRONICO</div>
+                          <div class="home-menu-register-writing">
+                              <p>Mantente en contacto con nosotros</p>
+                          </div>
+                          <div class="home-menu-register-input-area">
+                              <input type="text" id="homeregistermail" name="homeregistermail" placeholder="EMAIL">
+                          </div>
+                          <div class="home-menu-register-submit-area">
+                              <input type="submit" id="homeregistersubmit" name="homeregistersubmit" value="REGISTRARSE">
+                          </div>
+                          <div class="home-menu-social-area">
+                              <ul>
+                                {% if LINK_FACEBOOK %}<li><a href="{{LINK_FACEBOOK}}" target="_blank" title="Facebook Link"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>{% endif %}
+                                {% if LINK_TWITTER %}<li><a href="{{LINK_TWITTER}}" target="_blank" title="Twitter Link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>{% endif %}
+                                {% if LINK_INSTAGRAM %} <li><a href="{{LINK_INSTAGRAM}}" target="_blank" title="Instagram Link"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>{% endif %}
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column col-md-1 hidden-sm hidden-sm"></div>
+          </div>
+      </div>
+  </div>
+<!--footer-->
+  <div class="container-fluid" id="footer">
+      <div class="container">
+          <div class="row">
+              <div class="column col-md-1 hidden-sm hidden-xs"></div>
+              <div class="column col-md-5 col-sm-12 col-xs-12">
+                  <div class="footer-rights">&copy; 2016 PINK</div>
+              </div>
+              <div class="column col-md-5 col-sm-12 col-xs-12">
+                  <div class="footer-cag"><a href="https://themeforest.net/user/cagproject/portfolio" target="_blank" title="CAG PROJECT"><img src="{% static 'core/images/cag.svg' %}" alt="CAG Project Logo"/></a></div>
+              </div>
+              <div class="column col-md-1 hidden-sm hidden-xs"></div>
+          </div>
+      </div>
+  </div>
+<!--fin barra final-->
+</body>
+<!--scripts-->
+<script type="text/javascript" src="{% static 'core/js/jquery-1.12.2-min.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/scrolling.js' %}"></script>
+
+
+{% block scripts %}{% endblock %}
+<script src="https://use.typekit.net/vqp8msz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<!--
+<script type="application/javascript">
+    $("#homesearchshopcountry").change(function () {
+        if ($(this).data('options') == undefined) {
+            /*Taking an array of all options-2 and kind of embedding it on the select1*/
+            $(this).data('options', $('#homesearchshopcity option').clone());
+        }
+        var id = $(this).val();
+        var options = $(this).data('options').filter('[class=' + id + ']');
+        $('#homesearchshopcity').html(options);
+    });
+</script>-->
+</html>

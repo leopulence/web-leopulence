@@ -1,0 +1,44 @@
+#content-contact-area{padding-bottom: 182px; background-color: white;}
+#gmap{width: 100%; height: 382px; margin-bottom: 40px; margin-top: 40px;}
+.content-contact-subheader{margin-bottom: 40px; font-size: 16px;font-family: $font-2; font-weight: 400; letter-spacing: 4px;}
+.content-contact-writing-area{font-size: 15px;margin-bottom: 40px; font-weight: 400;}
+.content-contact-input-area{width: 100%;margin-bottom: 30px;
+    input{width: 100%; height: 20px; line-height: 15px; font-size: 13px; padding-bottom: 5px; border: 0px; border-bottom: 1px solid black; outline: none; box-shadow: none;}
+    input::-webkit-input-placeholder {
+        color: black !important;
+    }
+    input:-moz-placeholder {
+        /* Firefox 18- */
+        color: black !important;
+    }
+    
+    input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: black !important;
+    }
+    
+    input:-ms-input-placeholder {
+        color: black !important;
+    }
+    textarea{width: 100%; line-height: 18px; font-size: 13px; padding-bottom: 5px; border: 0px; border-bottom: 1px solid black; outline: none; box-shadow: none;resize: none; padding: 0px;}
+    textarea::-webkit-input-placeholder {
+        color: black !important;
+    }
+    textarea:-moz-placeholder {
+        /* Firefox 18- */
+        color: black !important;
+    }
+    
+    textarea::-moz-placeholder {
+        /* Firefox 19+ */
+        color: black !important;
+    }
+    
+    textarea:-ms-input-placeholder {
+        color: black !important;
+    }
+}
+.content-contact-submit-area{width: 200px;margin-bottom: 30px;
+    input{width: 100%; border: 1px solid black; outline: none; box-shadow: none; font-size: 14px; line-height: 36px; height: 40px; background-color: black; color: white;@include animation-timing(0.3s); font-weight: 300; letter-spacing: 4px;}
+    input:hover{color: white; background-color: $secondsitecolor;border: 1px solid $secondsitecolor;}
+}

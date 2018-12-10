@@ -1,0 +1,22 @@
+<div class="container-fluid" id="content-menu-area">
+    <ul>
+        <li {% if request.path == '/about/' %}class="selected"{% endif %}><a href="{% url 'pages:about' %}" title="NOSOTROS">NOSOTROS</a></li>
+        {% for pages in pages_list %}
+        <li {% if request.path|slice:"7:8" == pages.id|slugify %}class="selected"{% endif %}><a href="{% url 'pages:page' pages.id pages.title|slugify %}" title="{{pages.title}}">{{pages.title}}</a></li>
+        {% endfor %} 
+    </ul>
+
+</div>
+<!--{% include 'colections/includes/colections_menu.html' %}-->
+<div class="container-fluid" id="content-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="column col-md-1 hidden-sm hidden-xs"></div>
+            <div class="column col-md-11 col-sm-12 col-xs-12">
+                <div class="content-header">
+                    <h1>NOSOTROS  {% if request.path != '/about/' %}- {{pages}}{% endif %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

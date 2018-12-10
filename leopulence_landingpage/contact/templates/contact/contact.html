@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}Contacto{% endblock %}
+{% block content %}
+<div class="container-fluid" id="content-menu-area">
+    <ul>
+        <li class="selected"><a href="contact.html" title="CONTACT">CONTACTO</a></li>
+        <!--<li><a href="shop.html" title="SHOP">SHOP</a></li>
+        <li><a href="saleslocations.html" title="SALES LOCATIONS">SALES LOCATIONS</a></li>
+        <li><a href="franchise.html" title="FRANCHISE">FRANCHISE</a></li>
+        <li><a href="customerrelations.html" title="CUSTOMER RELATIONS">CUSTOMER RELATIONS</a></li>-->
+    </ul>
+</div>
+<div class="container-fluid" id="content-header-area">
+        <div class="container">
+            <div class="row">
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+                <div class="column col-md-11 col-sm-12 col-xs-12">
+                    <div class="content-header">
+                        <h1>CONTACTO</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="content-contact-area">
+        <div class="container">
+            <div class="row">
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+                <div class="column col-md-10 col-sm-12 col-xs-12">
+                    <div id="gmap"></div>
+                </div>
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+            </div>
+            <div class="row">
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+                <div class="column col-md-5 col-sm-12 col-xs-12">
+                    <div class="content-contact-subheader">DIRECCION</div>
+                    <div class="content-contact-writing-area">
+                        Ciudad de la paz 2626, CABA<br>
+                        <br>
+                        T	+54 11 5348 7622<br>
+                        <!--F	+44 20 7946 0436<br>-->
+                        opulence.altacostura@gmail.com<br>
+                        <br>
+                        Melany Roca<br>
+                        Diseñadora<br>
+                        melanyroca_22@gmail.com
+                    </div>
+                </div>
+                <div class="column col-md-5 col-sm-12 col-xs-12">
+                    
+                        <div class="content-contact-subheader">FORMULARIO DE CONTACTO</div>
+                        {% if 'ok' in request.GET %}
+                            <p><b>Su mensaje se ha enviado correctamente</b></p>
+                        {% endif %}
+                        <form name="headquarterscontactform" enctype="multipart/form-data" method="POST" action="">
+                            {% csrf_token %}
+                            <div class="content-contact-input-area">
+                                <!--<input placeholder="NOMBRE DE CONTACTO" id="contactinputname" name="contactinputname" type="text">
+                            -->{{form.name}}
+                            </div>{{form.name.errors}}
+                            <div class="content-contact-input-area">
+                                <!--<input placeholder="TELEFONO" id="contactinputtel" name="contactinputtel" type="text">
+                            -->{{form.telefono}}
+                            </div>{{form.telefono.errors}}
+                            <div class="content-contact-input-area">
+                                <!--<input placeholder="EMAIL" id="contactinputmail" name="contactinputmail" type="email">
+                            -->{{form.email}}
+                            </div>{{form.email.errors}}
+                            <div class="content-contact-input-area">
+                                <!--<textarea rows="5" name="message" id="contactinputmessage" placeholder="MENSAJE"></textarea>
+                            -->{{form.content}}
+                            </div>{{form.content.errors}}
+                            <div class="content-contact-submit-area">
+                                <input type="submit" name="contactsubmit" id="contactsubmit" value="ENVIAR">
+                            </div>
+                        </form>
+                </div>
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+            </div>
+        </div>
+        </div>
+{% endblock %}
+{% block scripts %}
+<script   src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script type="text/javascript" src="{% static 'core/js/contact.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqPLRFpL8YavE2CM2A-ehGS2XR0dELZfA&callback=initmap" async defer></script>
+{% endblock %}

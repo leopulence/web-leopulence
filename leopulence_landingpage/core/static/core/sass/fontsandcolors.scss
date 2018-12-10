@@ -1,0 +1,31 @@
+$font-1: "proxima-nova",sans-serif;
+$font-2: "essonnes-display",sans-serif;
+$weight-xlight: 200;
+$weight-light: 300;
+$weight-normal: 400;
+$weight-bold: 600;
+
+$mainbgcolor:rgba(77, 77, 79, 1);
+$mainsitecolor: deeppink;
+$secondsitecolor: #8f4b7b;
+$mainsitecolorlowopacity: rgba(178, 154, 107, 0.6);
+$writingonmainsitecolor: #4d4d4f;
+
+
+$header-logo-alignment: left;
+
+@mixin animation-timing($timing) {
+-webkit-transition: $timing; 
+-moz-transition: $timing; 
+-ms-transition: $timing; 
+-o-transition: $timing; 
+transition: $timing;
+}
+
+@mixin gray-this($amount) {
+-webkit-filter: grayscale($amount * 100%);
+filter: grayscale($amount * 100%);
+filter: grayscale($amount);
+}
+.first-letter{font-size: 130%;}
+.a{outline: none !important;}
