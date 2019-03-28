@@ -245,7 +245,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #8f4b7b;
+  background-color: #bdbdbd;
   z-index: 998;
   -webkit-transition: 1s;
   -moz-transition: 1s;
@@ -258,7 +258,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #8f4b7b;
+  background-color: #BDBDBD;
   z-index: 998;
   -webkit-transition: 1s;
   -moz-transition: 1s;
@@ -314,7 +314,7 @@ body {
         font-weight: lighter;
         font-family: "essonnes-display", sans-serif; }
       .menu-item ul li a:hover {
-        color: deeppink; }
+        color: #bdbdbd; }
       .menu-item ul li i {
         height: 75px;
         line-height: 75px;
@@ -336,7 +336,7 @@ body {
         text-align: center; }
       .menu-item ul li:first-child a:hover {
         background-color: transparent;
-        color: deeppink; }
+        color: #bdbdbd; }
 
 .menu-item-open {
   opacity: 1 !important; }
@@ -396,11 +396,11 @@ body {
 
 .menu-item.has-sub:hover::before {
   max-width: 100% !important;
-  background-color: deeppink; }
+  background-color: #bdbdbd; }
 
 .menu-item.no-sub:hover::before {
   max-width: 240px !important;
-  background-color: deeppink; }
+  background-color: #bdbdbd; }
 
 .responsive-menu {
   width: 80%;
@@ -618,7 +618,7 @@ keygen, select {
   width: 100%; }
   .home-sale-submit-area input {
     width: 100%;
-    background-color: deeppink;
+    background-color: #bdbdbd;
     color: white;
     font-size: 12px;
     height: 40px;
@@ -665,12 +665,12 @@ keygen, select {
 .home-content-line {
   width: 5px;
   height: 50px;
-  background-color: deeppink;
+  background-color: #BDBDBD;
   position: relative; }
 
 .home-content-flying-letter {
   position: absolute;
-  color: deeppink;
+  color: #bdbdbd;
   opacity: 0.1;
   z-index: 4; }
 
@@ -703,7 +703,7 @@ keygen, select {
         transition: 0.3s;
         font-weight: lighter; }
       .home-menu ul li a:hover {
-        color: deeppink; }
+        color: #bdbdbd; }
 
 #home-menu-small-area {
   position: relative;
@@ -740,7 +740,7 @@ keygen, select {
         text-align: center;
         font-weight: 400; }
     #home-menu-small ul li:first-child {
-      background-color: deeppink;
+      background-color: #BDBDBD;
       border-top: 0px; }
       #home-menu-small ul li:first-child a {
         color: white; }
@@ -774,7 +774,7 @@ keygen, select {
     font-weight: 300; }
     .home-menu-news-writing p b {
       font-size: 13px;
-      color: deeppink;
+      color: #BDBDBD;
       font-weight: 300; }
 
 .home-menu-allnews {
@@ -787,7 +787,7 @@ keygen, select {
     text-decoration: none !important;
     line-height: 18px;
     font-size: 13px;
-    color: deeppink;
+    color: #BDBDBD;
     font-weight: 300;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -807,7 +807,7 @@ keygen, select {
     font-weight: 300; }
     .home-menu-register-writing p b {
       font-size: 13px;
-      color: deeppink;
+      color: #bdbdbd;
       font-weight: 300; }
 
 .home-menu-register-input-area {
@@ -854,7 +854,7 @@ keygen, select {
     color: white;
     padding-left: 18px;
     padding-right: 18px;
-    background-color: deeppink;
+    background-color: #BDBDBD;
     outline: none;
     border: 0px;
     box-shadow: none;
@@ -866,7 +866,7 @@ keygen, select {
     font-weight: 300;
     letter-spacing: 2px; }
   .home-menu-register-submit-area input:hover {
-    color: deeppink;
+    color: #000000;
     background-color: white; }
 
 @media only screen and (min-width: 992px) {
@@ -889,7 +889,7 @@ keygen, select {
           transition: 0.3s;
           font-size: 20px; }
         .home-menu-social-area ul li a:hover {
-          color: deeppink; }
+          color: #bdbdbd; }
       .home-menu-social-area ul li:last-child {
         margin-right: 0px; }
 
@@ -987,7 +987,7 @@ keygen, select {
     left: 25%;
     width: 10%;
     height: 5px;
-    background-color: deeppink;
+    background-color: #bdbdbd;
     top: 6px; }
 
   .home-content-writing-left-low {
@@ -1057,7 +1057,7 @@ keygen, select {
     left: 65%;
     width: 10%;
     height: 5px;
-    background-color: deeppink;
+    background-color: #bdbdbd;
     top: 6px; }
 
   .home-content-writing-right-low {
@@ -1225,7 +1225,7 @@ keygen, select {
           transition: 0.3s;
           font-size: 20px; }
         .home-menu-social-area ul li a:hover {
-          color: deeppink; }
+          color: #bdbdbd; }
       .home-menu-social-area ul li:last-child {
         margin-right: 0px; }
 
@@ -1287,7 +1287,7 @@ keygen, select {
     left: 5%;
     width: 10%;
     height: 5px;
-    background-color: deeppink;
+    background-color: #BDBDBD;
     top: 6px; }
 
   .home-content-writing-left-low {
@@ -1354,7 +1354,7 @@ keygen, select {
     left: 85%;
     width: 10%;
     height: 5px;
-    background-color: deeppink;
+    background-color: #bdbdbd;
     top: 6px; }
 
   .home-content-writing-right-low {
@@ -1500,7 +1500,7 @@ keygen, select {
   background-position: center; }
 
 #content-header-area {
-  background-color: #8f4b7b;
+  background-color: #000000;
   padding-top: 42px;
   padding-bottom: 42px; }
 
@@ -1557,7 +1557,7 @@ keygen, select {
       content: '\f111';
       font-size: 8px;
       font-family: FontAwesome;
-      color: deeppink; }
+      color: #bdbdbd; }
 
 .content-collection-details-area {
   margin-top: 75px; }
@@ -1584,7 +1584,7 @@ keygen, select {
   font-size: 24px;
   text-align: center;
   color: white;
-  background-color: #8f4b7b;
+  background-color: #bdbdbd;
   font-family: "essonnes-display", sans-serif;
   font-weight: 300;
   letter-spacing: 4px;
@@ -1876,7 +1876,7 @@ keygen, select {
     transition: 0.3s;
     font-size: 30px; }
   .content-go-top a:hover {
-    background-color: #8f4b7b; }
+    background-color: #BDBDBD; }
 
 @media only screen and (max-width: 768px) {
   .content-news-area {
@@ -1923,7 +1923,7 @@ keygen, select {
   #content-menu-area {
     padding-top: 26px;
     padding-bottom: 26px;
-    background-color: deeppink; }
+    background-color: #BDBDBD; }
     #content-menu-area ul {
       padding: 0px;
       margin: 0px;
@@ -1947,7 +1947,7 @@ keygen, select {
           font-size: 16px;
           font-weight: 300;
           position: relative;
-          background-color: deeppink;
+          background-color: #BDBDBD;
           padding-left: 5px;
           padding-right: 5px; }
       #content-menu-area ul li.selected:before {
@@ -1998,8 +1998,8 @@ keygen, select {
       background-color: black; }
 
   .content-ourshops-country.selected-country a {
-    border-color: #8f4b7b;
-    background-color: #8f4b7b;
+    border-color: #bdbdbd;
+    background-color: #bdbdbd;
     color: white; } }
 @media only screen and (min-width: 992px) {
   .content-collectiondetails-anim-left {
@@ -2060,7 +2060,7 @@ keygen, select {
   #content-menu-area {
     padding-top: 26px;
     padding-bottom: 26px;
-    background-color: deeppink; }
+    background-color: #bdbdbd; }
     #content-menu-area ul {
       padding: 0px;
       margin: 0px;
@@ -2141,16 +2141,16 @@ keygen, select {
       transition: 0.3s;
       background-color: black; }
     .content-ourshops-country a:hover {
-      border-color: #8f4b7b;
-      background-color: #8f4b7b;
+      border-color: #bdbdbd;
+      background-color: #bdbdbd;
       color: white; }
 
   .content-ourshops-country:last-child {
     margin-right: 0px; }
 
   .content-ourshops-country.selected-country a {
-    border-color: #8f4b7b;
-    background-color: #8f4b7b;
+    border-color: #bdbdbd;
+    background-color: #bdbdbd;
     color: white; }
 
   .content-collectiondetails-animation-area:hover .content-collectiondetails-hover-area {
@@ -2181,8 +2181,8 @@ keygen, select {
     margin-left: 40px; }
 
 .collections-choose-area {
-  width: 100%;
-  height: 150px;
+  width: 200px;
+  height: 300px;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -2195,7 +2195,7 @@ keygen, select {
     text-align: center;
     font-size: 20px;
     opacity: 0;
-    background-color: deeppink;
+    background-color: #000000;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -2297,9 +2297,9 @@ keygen, select {
     line-height: 38px;
     height: 41px;
     color: white;
-    background-color: deeppink;
+    background-color: #bdbdbd;
     text-decoration: none !important;
-    border: 1px solid deeppink;
+    border: 1px solid #bdbdbd;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -2423,7 +2423,7 @@ keygen, select {
     margin-left: 10%; }
     .showcase-writing-lower a:hover {
       background-color: white;
-      color: deeppink;
+      color: #bdbdbd;
       border: 1px solid white; }
 
   .showcase-scroll-mouse {
@@ -2488,9 +2488,9 @@ keygen, select {
       line-height: 33px;
       height: 35px;
       color: white;
-      background-color: deeppink;
+      background-color: #bdbdbd;
       text-decoration: none !important;
-      border: 1px solid deeppink;
+      border: 1px solid #bdbdbd;
       -webkit-transition: 0.3s;
       -moz-transition: 0.3s;
       -ms-transition: 0.3s;
@@ -2595,5 +2595,5 @@ keygen, select {
     letter-spacing: 4px; }
   .content-contact-submit-area input:hover {
     color: white;
-    background-color: #8f4b7b;
-    border: 1px solid #8f4b7b; }
+    background-color: #BDBDBD;
+    border: 1px solid #BDBDBD; }

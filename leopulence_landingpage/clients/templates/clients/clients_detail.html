@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block title %}{{clients.title}}{% endblock %}
+
+{% block content %}
+{% include 'about/includes/about_bar.html' %}
+
+
+    <div class="container-fluid" id="content-corporate-area">
+        <div class="container">
+            <div class="row">
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+                <div class="column col-md-10 col-sm-12 col-xs-12">
+                    <div class="content-collection-writing-area">
+                    {{clients.content|safe}}
+                    </div>
+                </div>
+                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'core/js/corporate.js' %}"></script>
+
+<script src="https://use.typekit.net/vqp8msz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+{% endblock %}

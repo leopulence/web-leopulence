@@ -6,51 +6,72 @@
 {% block content %}
 {% include 'colections/includes/colections_bar.html' %}
 
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
 
+div.gallery:hover {
+  border: 1px solid #777;
+}
 
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 1px;
+  float: left;
+  width: 33.3333%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 33.3333%;
+    margin: 1px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 33%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 
 
 
        <div class="container-fluid" id="content-collectiondetails-area">
-        <div class="content-collectiondetails-backwriting-topleft">FOR</div>
-        <div class="content-collectiondetails-backwriting-topright">WOMEN</div>
+        <!--<div class="content-collectiondetails-backwriting-topleft">FOR</div>-->
+        <!--<div class="content-collectiondetails-backwriting-topright">WOMEN</div>-->
         <div class="container">
-        {% for foto in colection.get_all_images %}
-            {% load colections_extras %}
-            {% is_pair foto.id as foto_pair %}
-            {% if foto_pair == False %}
-                <div class="row">
-                    <div class="column col-md-6 col-sm-6 col-xs-12" style="padding:0px;">
-                        
-                        <div class="content-collectiondetails-animation-area" id="ccaa-{{forloop.counter}}">
-                            <div class="content-collectiondetails-animation-item" id="ccai-{{forloop.counter}}" style="background-image: url('{{foto.image.url}}')">
-                            </div>
-                            <div class="content-collectiondetails-animation-filter"></div>
-                            <div class="content-collectiondetails-hover-area">
-                                <a href="{{foto.image.url}}" class="fancybox" data-fancybox-group="group" title="Gallery"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% if foto_pair == True %}  
-                <div class="row">
-                    <div class="column col-md-6 col-sm-6 hidden-xs" style="padding:0px;"></div>
-                    <div class="column col-md-6 col-sm-6 col-xs-12" style="padding:0px;">
-                        <div class="content-collectiondetails-animation-area" id="ccaa-{{forloop.counter}}">
-                            <div class="content-collectiondetails-animation-item" id="ccai-{{forloop.counter}}" style="background-image: url('{{foto.image.url}}')">
-                            </div>
-                            <div class="content-collectiondetails-animation-filter"></div>
-                            <div class="content-collectiondetails-hover-area">
-                                <a href="{{foto.image.url}}" class="fancybox" data-fancybox-group="group" title="Gallery"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-            {% endfor %}
 
-  
+        {% for foto in colection.images.all %}
+        <div class="responsive">
+            <div class="gallery">
+            <a target="_blank" href={{foto.image.url}} class="fancybox" data-fancybox-group="group" title="Gallery">
+            <img src={{foto.image.url}} alt="Cinque Terre" width="600" height="400">
+            </a>
+            </div>
+        </div>
+            {% endfor %}
+            <div class="clearfix"></div>
             <div class="row">
                 <div class="column col-md-12 col-sm-12 col-xs-12">
                     <div class="content-go-top">

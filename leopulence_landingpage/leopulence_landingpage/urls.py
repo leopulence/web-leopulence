@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from colections.urls import colections_patterns
+from clients.urls import clients_patterns
 from blog.urls import blog_patterns
 from about.urls import pages_patterns
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     path('contact', include('contact.urls')),
     #paths de colections
     path('colections/', include(colections_patterns)),
+    path('clients/', include(clients_patterns)),
     #paths de blog
     path('blog/', include(blog_patterns)),
     #paths de blog
@@ -37,3 +39,4 @@ urlpatterns = [
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    

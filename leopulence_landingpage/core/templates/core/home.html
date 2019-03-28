@@ -6,119 +6,101 @@
 {% block content %}
     <div class="container-fluid" id="home-content-area">
         <div class="container" id="home-content-container">
-            <div class="home-content-flying-letter" id="hcfl-c">C</div>
-            <div class="home-content-flying-letter" id="hcfl-o">O</div>
-            <div class="home-content-flying-letter" id="hcfl-l">L</div>
-            <div class="home-content-flying-letter" id="hcfl-e">E</div>
-            <div class="home-content-flying-letter" id="hcfl-c2">C</div>
-            <div class="home-content-flying-letter" id="hcfl-c3">C</div>
-            <div class="home-content-flying-letter" id="hcfl-i">I</div>
-            <div class="home-content-flying-letter" id="hcfl-o2">O</div>
-            <div class="home-content-flying-letter" id="hcfl-n">N</div>
-            <div class="home-content-flying-letter" id="hcfl-e2">E</div>
-            <div class="home-content-flying-letter" id="hcfl-s">S</div>
+
+            
             
             {% for colection in colections %}
             {% load colections_extras %}
             {% is_pair forloop.counter as colection_pair %}
             {% if colection_pair == False %}
-            <div class="row">
-                <div class="column col-md-7 col-sm-12 col-xs-12 col-md-push-5">
-                    <div class="home-content-pic-area-right"><img src="{{colection.image.url}}" alt="Collection Picture"/></div>
-                </div>
-                <div class="column col-md-5 col-sm-12 col-xs-12 col-md-pull-7">
+            <div class="row">                
+            <div class="column col-md-5 col-sm-12 col-xs-12 col-md-push-7">
                     <div class="home-content-writing-area-left">
                         <div class="home-content-writing-left-top">{{colection.title}}</div>
                         <div class="home-content-writing-left-mid">{{colection.content}}</div>
-                        <div class="home-content-writing-left-low"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="DESCUBRIR">DESCUBRIR <img src="{% static 'core/images/home-contentdetails.png' %}" alt="DESCUBRIR Arrow"/></a></div>
+                        <!--<div class="home-content-writing-left-low"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="DESCUBRIR">DESCUBRIR <img src="{% static 'core/images/home-contentdetails.png' %}" alt="DESCUBRIR Arrow"/></a></div>-->
                     </div>
                 </div>
+                <div class="column col-md-7 col-sm-12 col-xs-12 col-md-pull-5">
+                    
+                    <div class="home-content-pic-area-right"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}"><img  src="{{colection.image.url}}" alt="Collection Picture"/></a></div>
+                </div>
+<!--
                 <div class="column col-md-12 col-sm-12 col-xs-12">
                     <div class="home-content-number-area-left"><b>{{forloop.counter}}.</b></div>
                     <div class="home-content-line" id="homecl-{{forloop.counter}}"></div>
-                </div>
+                </div>-->
             </div>
             {% endif %}
             {% if colection_pair == True %}
             <div class="row">
-                <div class="column col-md-7 col-sm-12 col-xs-12">
-                    <div class="home-content-pic-area-left"><img src="{{colection.image.url}}" alt="Collection Picture"/></div>
-                </div>
                 <div class="column col-md-5 col-sm-12 col-xs-12">
                     <div class="home-content-writing-area-right">
                         <div class="home-content-writing-right-top">{{colection.title}}</div>
                         <div class="home-content-writing-right-mid">{{colection.content}}</div>
-                        <div class="home-content-writing-right-low"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="DESCUBRIR">DESCUBRIR <img src="{% static 'core/images/home-contentdetails.png' %}" alt="DESCUBRIR Arrow"/></a></div>
-                    </div>
+                        <!--<div class="home-content-writing-right-low"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}" title="DESCUBRIR">DESCUBRIR <img src="{% static 'core/images/home-contentdetails.png' %}" alt="DESCUBRIR Arrow"/></a></div>
+                    --></div>
                 </div>
+                <div class="column col-md-7 col-sm-12 col-xs-12">
+                    <div class="home-content-pic-area-left"><a href="{% url 'colections:singlecolection' colection.id colection.title|slugify %}"><img  src="{{colection.image.url}}" alt="Collection Picture"/></div></a>
+                </div>                
+
+                <!--
                 <div class="column col-md-12 col-sm-12 col-xs-12">
                     <div class="home-content-number-area-right"><b>{{forloop.counter}}.</b></div>
                     <div class="home-content-line" id="homecl-{{forloop.counter}}"></div>
-                </div>
+                </div>-->
             </div>
             {% endif %}
             {% endfor %}
         </div>
     </div>
-    <!--
-    <div class="container-fluid" id="home-sales-area" data-parallax="scroll" data-image-src="http://placehold.it/1920x1080">
-        <div class="container" id="home-sale-inner-container">
-            <div class="row">
-                <div class="column col-md-1 hidden-sm hidden-xs"></div>
-                <div class="column col-md-4 col-sm-6 col-xs-12">
-                    <div class="home-sale-writing-area">
-                        <div class="home-sale-writing">
-                            SALES<br>LOCATIONS
-                        </div>
-                    </div>
-                </div>
 
-                <div class="column col-md-1 col-sm-1 hidden-xs"></div>
+    	    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:800px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
 
-                    <div class="column col-md-2 col-sm-2 col-xs-12">
-                        <div class="home-sale-input-area">
-                            <select name="homesearchshopcountry" id="homesearchshopcountry" class="">
-                                <option value="0">COUNTRY</option>
-                                <option value="1">ARGENTINA</option>
-                                <option value="2">AUSTRALIA</option>
-                                <option value="3">U.K.</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="column col-md-2 col-sm-2 col-xs-12">
-                        <div class="home-sale-input-area">
-                            <select name="homesearchshopcity" id="homesearchshopcity" class="">
-                                    <option value="0" class="0">CITY</option>
-                                    <option value="LONDON" class="1">LONDON</option>
-                                    <option value="MANCHESTER" class="1">MANCHESTER</option>
-                                    <option value="LIVERPOOL" class="1">LIVERPOOL</option>
-                                    <option value="LEEDS" class="1">LEEDS</option>
-                                    <option value="BRISTOL" class="1">BRISTOL</option>
-                                    <option value="PARIS" class="2">PARIS</option>
-                                    <option value="TOURS" class="2">TOURS</option>
-                                    <option value="LYON" class="2">LYON</option>
-                                    <option value="ROME" class="3">ROME</option>
-                                    <option value="SAN MORINO" class="3">SAN MORINO</option>
-                                    <option value="NAPLES" class="3">NAPLES</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="column col-md-1 col-sm-1 col-xs-12">
-                        <div class="home-sale-submit-area">
-                            <input type="submit" id="homesalesubmit" name="homesalesubmit" value="FIND">
-                        </div>
-                    </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1200px;height:800px;overflow:hidden;">
+            {% for client in clients %}
+            <div class="et_pb_slide_description" data-p="170" >
+                <a href="{% url 'clients:singleclient' client.id client.title|slugify %}"> <img data-u="image" src="{{client.image.url}}"/>
+                </a>
+                
+                
+            </div>
+            {% endfor %}
 
-                <div class="column col-md-1 hidden-sm hidden-xs"></div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
             </div>
         </div>
-    </div>-->
-    
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
 {% endblock %}
 {% block scripts %}
-<script type="text/javascript" src="{% static 'core/js/index.js' %}"></script>
+
+
 <script type="text/javascript" src="{% static 'core/js/furkanberkerA-slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'core/js/index.js' %}"></script>
+
+
 <script type="text/javascript" src="{% static 'core/js/parallax.js' %}"></script>
+
 <script type="text/javascript">
     var sliderimagesX = [{% for imagen in carrusel %}"{{imagen.image.url}}",{% endfor %}];
     $(document).ready(function () {
@@ -138,4 +120,5 @@
         }
     }
 </script>
+
 {% endblock %}

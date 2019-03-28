@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'about.apps.AboutConfig',
     'contact',
+    'clients',
 
 ]
 
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social.processors.ctx_dict',
                 'colections.processors.ctx_dict',
+                'clients.processors.ctx_dict',
                 'blog.processors.ctx_dict',
                 'about.processors.ctx_dict'
             ],
@@ -131,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
 # Media files
 
